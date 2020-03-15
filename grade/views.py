@@ -10,11 +10,12 @@ from django.views.generic import TemplateView, CreateView, ListView, UpdateView,
 # Create your views here.
 from .models import Results, Student, Grade, User, Assignment
 from .forms import DocUploadForm, AssignmentCreateForm
-from .decorators import student_required, teacher_required
+from .decorators import student_required, teacher_required, teacher_and_staff_required
 from django.utils.decorators import method_decorator
 from django.contrib import messages
 
 
+@method_decorator([login_required, teacher_and_staff_required], name='dispatch')
 class UploadGradeView(LoginRequiredMixin, CreateView):
     template_name = 'grade/result-upload/master_doc.html'
     context_object_name = 'form'
@@ -106,7 +107,8 @@ class ClassRoomListView(ListView):
     model = Grade
 
 
-class GradeHomePage(LoginRequiredMixin, TemplateView):
+@method_decorator([login_required, teacher_and_staff_required], name='dispatch')
+class GradeHomePage(TemplateView):
     template_name = 'grade/base_grade.html'
 
 
