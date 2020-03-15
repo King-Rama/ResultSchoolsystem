@@ -1,0 +1,27 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Create</li>
+    <li class="breadcrumb-item"><a href="{% url 'grade:assign-list' %}">List Assignment</a></li>
+
+  </ol>
+</nav>
+    </div>
+    <hr class="mt-0 mb-4">
+    <form action="{% url 'grade:assign-delete' assign_delete.pk %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>Are you sure you want to delete the assignment: "{{ assign_delete.title }}"?</p>
+    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  Confirm Delete
+</button></form>
+    <hr class="mt-0 mb-4">
+
+{% endblock content %}
+
+
+
+
+

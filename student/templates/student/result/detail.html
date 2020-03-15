@@ -1,0 +1,140 @@
+
+{% extends 'student/base.html' %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'student:results' %}">List of Results</a></li>
+
+  </ol>
+</nav>
+    <div class="container row">
+    <div class="container mx-auto">
+
+        <div class="card text-center">
+  <div class="card-header">
+    {{assign_detail.title}}
+  </div>
+
+        <table class="table table-bordered table-primary table-responsive">
+          <thead>
+    <tr>
+      <th scope="col">NO:</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+            <tbody>
+<tr>
+    <th>1</th>
+                <td>Mathematics</td>
+                <td>{{ result_detail.maths }}</td>
+</tr>
+            <tr>
+    <th>2</th>
+                <td>English</td>
+                <td>{{ result_detail.english }}</td>
+</tr>
+            <tr>
+    <th>3</th>
+                <td>Health</td>
+                <td>{{ result_detail.health }}</td>
+</tr>
+            <tr>
+    <th>4</th>
+                <td>Kusoma</td>
+                <td>{{ result_detail.kusoma }}</td>
+</tr>
+            <tr>
+    <th>5</th>
+                <td>Arts and Sports</td>
+                <td>{{ result_detail.arts_sports }}</td>
+</tr>
+            <tr>
+    <th>6</th>
+                <td>Kiswahili</td>
+                <td>{{ result_detail.kiswahili }}</td>
+</tr>
+            <tr>
+    <th>7</th>
+                <td>Science & Tech</td>
+                <td>{{ result_detail.science_tech }}</td>
+</tr>
+            <tr>
+    <th>8</th>
+                <td>Civics & Moral</td>
+                <td>{{ result_detail.civics_moral }}</td>
+</tr>
+            <tr>
+    <th>9</th>
+                <td>Social Studies</td>
+                <td>{{ result_detail.social_studies }}</td>
+</tr>
+            <tr>
+    <th>10</th>
+                <td>Geography</td>
+                <td>{{ result_detail.geography }}</td>
+</tr>
+            <tr>
+    <th>11</th>
+                <td>History</td>
+                <td>{{ result_detail.history }}</td>
+</tr>
+            <tr>
+    <th>12</th>
+                <td>ICT</td>
+                <td>{{ result_detail.ict }}</td>
+</tr>
+            <tr>
+    <th>13</th>
+                <td>V Skills</td>
+                <td>{{ result_detail.v_skills }}</td>
+</tr>
+            <tr>
+    <th>14</th>
+                <td>PDS</td>
+                <td>{{ result_detail.pds }}</td>
+</tr>
+            <tr>
+    <th>15</th>
+                <td>Science</td>
+                <td>{{ result_detail.science }}</td>
+</tr>
+<tr>
+    <th></th>
+                <td></td>
+                <td></td>
+</tr>
+            <tr>
+
+                <td>Subjects Taken</td>
+                <td colspan="2">{{ result_detail.subject_taken }}</td>
+</tr>
+
+
+            <tr>
+
+                <td>Mean Score</td>
+                <td colspan="2">{{ result_detail.mean_score }}</td>
+</tr>
+
+  <div class="card-footer text-muted">
+    Student Name: {{ result_detail.fullname }}.
+      {% if assign_detail.file %}
+           file :
+      <a class="btn btn-info" href="{% url 'object' assign_detail.pk %}">Download</a>
+        {% endif %}
+  </div>
+</div>
+
+    </div>
+    </div>
+    <hr class="mt-0 mb-4">
+
+
+{% endblock content %}
+
+
+
+
+
+

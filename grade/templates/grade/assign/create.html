@@ -1,0 +1,22 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Create</li>
+    <li class="breadcrumb-item"><a href="{% url 'grade:assign-list' %}">List Assignment</a></li>
+
+  </ol>
+</nav>
+    </div>
+    <hr class="mt-0 mb-4">
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-success btn-block" value="Submit">
+    </form>
+    <hr class="mt-0 mb-4">
+
+{% endblock content %}
+

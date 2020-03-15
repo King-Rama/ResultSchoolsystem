@@ -1,0 +1,40 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+{#      <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'grade:assign-list' %}">List assignment</a></li>#}
+    <li class="breadcrumb-item"><a href="{% url 'grade:assign' %}">Create new assignment</a></li>
+  </ol>
+</nav>
+    <div class="container row">
+    <div class="container mx-auto">
+
+        <div class="card text-center">
+  <div class="card-header">
+    {{assign_detail.title}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">{{ assign_detail.desc }}</p>
+    <a href="">Update Assignment</a>
+      <a href="" class="btn btn-danger">Delete Assignment</a>
+  </div>
+  <div class="card-footer text-muted">
+    {{ re }}
+
+
+  </div>
+</div>
+
+    </div>
+    </div>
+    <hr class="mt-0 mb-4">
+
+
+{% endblock content %}
+
+
+
+
+
+

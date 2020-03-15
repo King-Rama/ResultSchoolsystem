@@ -1,0 +1,29 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'grade:assign-list' %}">List assignment</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'grade:assign' %}">Create new assignment</a></li>
+  </ol>
+</nav>
+    <div class="container row">
+    <div class="container mx-auto">
+        {% if students %}
+        <div class="list-group">
+        <li href="{% url 'grade:assign-list' %}" class="h4 text-primary list-group-item list-group-item-action">List of students registered for: {{ user }}</li>
+            {% for x in results %}
+  <a href="{{ x.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-light text-dark">{{ x.fullname }}
+
+  </a>
+
+    {% endfor %}
+  </div>
+  {% else %}
+    <p>There are no registered students yet.</p>
+  {% endif %}
+    </div>
+
+    </div>
+    <hr class="mt-0 mb-4">
+
+{% endblock content %}

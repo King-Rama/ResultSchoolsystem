@@ -1,0 +1,20 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+
+    </div>
+    <hr class="mt-0 mb-4">
+    <div class="card-content alert alert-danger">
+    <p class="h5 text-danger">Warning! This form is for adding new students results</p>
+    <p class="h6 text-info">Must be used only one time for one class</p>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-primary btn-block w-50 mx-auto" value="upload">
+    </form>
+    <hr class="mt-0 mb-4">
+
+{% endblock content %}
+

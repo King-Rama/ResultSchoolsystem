@@ -1,0 +1,48 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+   <hr class="mt-0 mb-4">
+    </div>
+
+    <hr class="mt-0 mb-4">
+     <div class="card-content alert alert-danger">
+    <p class="h5 text-danger">Warning! This form is for adding  students results</p>
+    <p class="h6 text-info">May be used several times as needed to upload students results</p>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button  class="btn btn-primary btn-block w-75 mx-auto" data-toggle="modal" data-target="#exampleModal">
+  Upload
+</button>
+    <hr class="mt-0 mb-4">
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation request to upload files and perform alteration students results</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card-content">
+            <div class="alert alert-warning">
+                <p class="h4 text-danger d-inline-flex p-2">This file can only be uploaded once!</p>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Confirm upload"></input>
+      </div>
+    </div>
+  </div>
+</div>
+    </form>
+
+{% endblock content %}
+

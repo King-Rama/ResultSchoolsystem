@@ -1,0 +1,41 @@
+{% extends 'student/base.html' %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'student:assigns' %}">List assignment</a></li>
+
+  </ol>
+</nav>
+    <div class="container row">
+    <div class="container mx-auto">
+
+        <div class="card text-center">
+  <div class="card-header">
+    {{assign_detail.title}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">{{ assign_detail.desc }}</p>
+      {{ assign_detail. }}
+  </div>
+  <div class="card-footer text-muted">
+    Assignment uploaded on {{ assign_detail.created }}.
+      {% if assign_detail.file %}
+           file :
+      <a class="btn btn-info" href="{% url 'object' assign_detail.pk %}">Download</a>
+        {% endif %}
+  </div>
+</div>
+
+    </div>
+    </div>
+    <hr class="mt-0 mb-4">
+
+
+{% endblock content %}
+
+
+
+
+
+

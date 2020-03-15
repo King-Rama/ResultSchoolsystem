@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block nav_content %}
+    {% include 'grade/nav_grade.html' %}
+{% endblock nav_content %}
+
+{% block content %}
+    <div class="container">
+    <p></p>
+    <p class="h4">Welcome: <span class="badge badge-light text-primary">{{ user.username }}</span> </p>
+        <p class="h5"> You can perform various class related activities in here</p>
+    </div>
+{% endblock content %}

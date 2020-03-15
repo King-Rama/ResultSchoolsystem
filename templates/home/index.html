@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock title %}
+
+{% block content %}
+ <div class="container">
+    <p class="h1">Choose Account!</p>
+        <p class="h5">Select below the type of account to use.</p>
+     <hr class="mt-0 mb-4">
+        <a href="{% url 'grade:index' %}" type="button" class="btn btn-primary btn-lg">I'm a teacher</a>
+        <a href="{% url 'student:index' %}" type="button" class="btn btn-secondary btn-lg">I'm a student</a>
+
+ </div>
+{% endblock content %}
