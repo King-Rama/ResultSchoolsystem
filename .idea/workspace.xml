@@ -3,35 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4c76cfe4-a7dd-4a00-9612-1a9f748b79a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/base_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/base_grade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/result-upload/master_doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/result-upload/master_doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/result/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/result/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/student/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/student/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/accounts/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/accounts/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/student/assign/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/assign/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/student/assign/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/assign/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/student/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/student/nav_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/nav_student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/student/result/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/result/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/student/result/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/result/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/student/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/logged_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/logged_out.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +104,7 @@
       <workItem from="1584789009033" duration="15605000" />
       <workItem from="1584815807310" duration="704000" />
       <workItem from="1584816537768" duration="13044000" />
-      <workItem from="1584949979888" duration="30988000" />
+      <workItem from="1584949979888" duration="32275000" />
     </task>
     <servers />
   </component>
