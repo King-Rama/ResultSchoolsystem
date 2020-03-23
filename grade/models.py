@@ -54,9 +54,6 @@ class ResultFileUpload(models.Model):
     def __str__(self):
         return self.exam_name
 
-    def get_absolute_url(self):
-        return reverse('grade:index', kwargs={'pk': self.id})
-
 
 class Results(models.Model):
     user = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_result')

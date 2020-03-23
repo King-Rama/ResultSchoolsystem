@@ -1,13 +1,14 @@
-
 {% extends 'student/base.html' %}
+{% load my_extras %}
 {% block content %}
+
     <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
       <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'student:results' %}">List of Results</a></li>
 
   </ol>
 </nav>
-    <div class="container row">
+    <div class="row">
     <div class="container mx-auto">
 
         <div class="card text-center">
@@ -15,90 +16,150 @@
     {{assign_detail.title}}
   </div>
 
-        <table class="table table-bordered table-primary table-responsive">
+        <table class="table table-bordered table-secondary table-responsive">
           <thead>
     <tr>
-      <th scope="col">NO:</th>
+
       <th scope="col">Subject</th>
       <th scope="col">Score</th>
+        <th scope="col">Grade</th>
     </tr>
   </thead>
             <tbody>
+            {% if result_detail.maths != '-' %}
 <tr>
-    <th>1</th>
+
                 <td>Mathematics</td>
                 <td>{{ result_detail.maths }}</td>
+                <td>{{ result_detail.maths|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.english != '-' %}
             <tr>
-    <th>2</th>
+
                 <td>English</td>
                 <td>{{ result_detail.english }}</td>
+                <td>{{ result_detail.english|grade_student }}</td>
 </tr>
+            {% endif %}
+            {% if result_detail.health != '-' %}
             <tr>
-    <th>3</th>
-                <td>Health</td>
+
+                <td>Health Care & Environment</td>
                 <td>{{ result_detail.health }}</td>
+                <td>{{ result_detail.health|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.kusoma != '-' %}
             <tr>
-    <th>4</th>
-                <td>Kusoma</td>
+
+                <td>Kusoma/Kuandika</td>
                 <td>{{ result_detail.kusoma }}</td>
+                <td>{{ result_detail.kusoma|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.arts_sports != '-' %}
             <tr>
-    <th>5</th>
+
                 <td>Arts and Sports</td>
                 <td>{{ result_detail.arts_sports }}</td>
+                <td>{{ result_detail.arts_sports|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.kiswahili != '-' %}
             <tr>
-    <th>6</th>
+
                 <td>Kiswahili</td>
                 <td>{{ result_detail.kiswahili }}</td>
+                <td>{{ result_detail.kiswahili|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.science_tech != '-' %}
             <tr>
-    <th>7</th>
+
                 <td>Science & Tech</td>
                 <td>{{ result_detail.science_tech }}</td>
+                <td>{{ result_detail.science_tech|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.civics_moral != '-' %}
             <tr>
-    <th>8</th>
+
                 <td>Civics & Moral</td>
                 <td>{{ result_detail.civics_moral }}</td>
+                <td>{{ result_detail.civics_moral|grade_student }}</td>
 </tr>
+            {% endif %}
             <tr>
-    <th>9</th>
+                {% if result_detail.social_studies != '-' %}
+
                 <td>Social Studies</td>
                 <td>{{ result_detail.social_studies }}</td>
+                    <td>{{ result_detail.social_studies|grade_student }}</td>
 </tr>
+{% endif %}
+
+            {% if result_detail.geography != '-' %}
             <tr>
-    <th>10</th>
+
                 <td>Geography</td>
                 <td>{{ result_detail.geography }}</td>
+                <td>{{ result_detail.geography|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.history != '-' %}
             <tr>
-    <th>11</th>
+
                 <td>History</td>
                 <td>{{ result_detail.history }}</td>
+            <td>{{ result_detail.history|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.ict != '-' %}
             <tr>
-    <th>12</th>
+
                 <td>ICT</td>
                 <td>{{ result_detail.ict }}</td>
+                <td>{{ result_detail.ict|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.v_skills != '-' %}
             <tr>
-    <th>13</th>
+
                 <td>V Skills</td>
                 <td>{{ result_detail.v_skills }}</td>
+                <td>{{ result_detail.v_skills|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.pds != '-' %}
             <tr>
-    <th>14</th>
+
                 <td>PDS</td>
                 <td>{{ result_detail.pds }}</td>
+                <td>{{ result_detail.pds|grade_student }}</td>
 </tr>
+            {% endif %}
+
+            {% if result_detail.science != '-' %}
             <tr>
-    <th>15</th>
+
                 <td>Science</td>
                 <td>{{ result_detail.science }}</td>
+                <td>{{ result_detail.science|grade_student }}</td>
 </tr>
+            {% endif %}
+
+
 <tr>
     <th></th>
                 <td></td>
@@ -114,17 +175,18 @@
             <tr>
 
                 <td>Mean Score</td>
-                <td colspan="2">{{ result_detail.mean_score }}</td>
+                <td >{{ result_detail.mean_score|round }}</td>
+                <td>{{ result_detail.mean_score|grade_student }}</td>
 </tr>
+            <tr>
 
-  <div class="card-footer text-muted">
-    Student Name: {{ result_detail.fullname }}.
-      {% if assign_detail.file %}
-           file :
-      <a class="btn btn-info" href="{% url 'object' assign_detail.pk %}">Download</a>
-        {% endif %}
-  </div>
-</div>
+                <td>Remarks</td>
+                <td colspan="2">{{ result_detail.mean_score|grade }}</td>
+</tr>
+            </tbody>
+        </table>
+
+
 
     </div>
     </div>

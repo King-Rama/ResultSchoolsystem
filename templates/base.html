@@ -20,22 +20,34 @@
 <div class="container">
 <hr class="mt-0 mb-4">
     <div class="row">
+    <div class="col-10 mx-auto">
+        <a href="{% url 'home' %}" class="row">
+            <img src="{% static 'img/tbes.png' %}" class="col-4 mx-auto" width="80" height="140">
+            <div class="col-4 mx-auto">
+                <p></p>
+                <p class="h5 text-center text-primary">BOHRA EDUCATION SOCIETY</p>
+                <p class="h5 text-center text-primary">BURHANI SCHOOLS</p>
+            </div>
+            <img src="{% static 'img/burhani.png' %}" class="col-4 mx-auto" width="80" height="140">
+        </a>
+    </div>
 
-        <div class="col-md-8 col-8 mx-auto">
-            <a href="{% url 'home' %}" class="h1 mt-2">Burhan Schools
-            {% if user.is_authenticated %}
-            <a href="/accounts/logout/" type="button" class="btn btn-secondary float-right">logout</a>
-            {% else %}
-            <a href="/accounts/login/" type="button" class="btn btn-primary float-right">login</a>
-            {% endif %}
-                <hr class="mt-0 mb-4">
-            </a>
-        </div>
-        <div class="col-md-9 col-9 mx-auto">
-            <div class="container">
-                <div class="jumbotron">
+{#        <div class="container col-md-10 col-10 mx-auto d-none d-lg-block">#}
+{#            <a href="{% url 'home' %}" class="h1 mt-2 hidden-sm"><img src="{% static 'img/tbes.png' %}" width="180" height="140">#}
+{#                <span class="h5 mx-auto">#}
+{#                    </span>#}
+{#                <img class="float-right" src="{% static 'img/burhani.png' %}" width="180" height="140">#}
+{#                <hr class="mt-0 mb-4">#}
+{##}
+{#            </a>#}
+{##}
+{#        </div>#}
+        <div class="container mx-auto col-lg-9">
+            <div class="">
+                <div class="jumbotron jumbotron-fluid">
                 {% block nav_content %}{% endblock nav_content %}
-                    <div class="container">
+
+                    <div class="">
                         {% block content %}
 
                         {% endblock content %}

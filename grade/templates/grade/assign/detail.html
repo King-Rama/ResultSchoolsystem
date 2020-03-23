@@ -6,7 +6,7 @@
     <li class="breadcrumb-item"><a href="{% url 'grade:assign' %}">Create new assignment</a></li>
   </ol>
 </nav>
-    <div class="container row">
+    <div class="row">
     <div class="container mx-auto">
 
         <div class="card text-center">
@@ -15,8 +15,9 @@
   </div>
   <div class="card-body">
     <h5 class="card-title"></h5>
-    <p class="card-text">{{ assign_detail.desc }}</p>
-    <a href="{% url 'grade:assign-update' assign_detail.pk %}" class="btn btn-secondary">Update Assignment</a>
+    <p class="card-text">{{ assign_detail.description }}</p>
+    <a href="{% url 'grade:assign-update' assign_detail.pk %}" class="btn btn-secondary">Update Assignment </a>
+    <p class="d-block d-sm-none d-none d-sm-block d-md-none"></p>
       <a href="{% url 'grade:assign-delete' assign_detail.pk %}" class="btn btn-danger">Delete Assignment</a>
   </div>
   <div class="card-footer text-muted">

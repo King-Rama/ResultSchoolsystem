@@ -55,7 +55,7 @@ class AssignmentDetailView(DetailView):
 @method_decorator([login_required, student_required], name='dispatch')
 class USerUpdateView(UpdateView):
     model = User
-    fields = ['first_name', 'middle_name', 'last_name', 'username']
+    fields = ['first_name', 'middle_name', 'last_name',]
     template_name = 'student/update.html'
     context_object_name = 'st_user'
 
@@ -66,6 +66,7 @@ class USerUpdateView(UpdateView):
 
 
 @login_required
+@student_required
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)

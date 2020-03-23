@@ -1,4 +1,4 @@
-{% extends 'student/base.html' %}
+{% extends 'grade/base_grade.html' %}
 {% block content %}
     <nav aria-label="breadcrumb">
 
@@ -8,7 +8,8 @@
 
         <div class="card text-center">
   <div class="card-header">
-    <a class="text-danger" href="{% url 'student:change_password' %}">Change Password</a>
+    <a class="text-danger font-weight-bold" href="{% url 'grade:change_password' %}">Change Password</a>
+
   </div>
             {% load crispy_forms_tags %}
  <hr class="mt-0 mb-4">

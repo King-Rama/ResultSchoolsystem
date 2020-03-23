@@ -6,8 +6,18 @@
     <li class="breadcrumb-item"><a href="{% url 'grade:assign' %}">Create new assignment</a></li>
   </ol>
 </nav>
-    <div class="container row">
+
+     {% if messages %}
+    {% for message in messages %}
+         <div class="alert alert-info">
+        {{ message|safe }}
+          </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="row">
     <div class="container mx-auto">
+
         {% if assign_list %}
         <div class="list-group">
         <a href="{% url 'grade:assign-list' %}" class="list-group-item list-group-item-action">List of uploaded assignments</a>
@@ -19,7 +29,7 @@
     {% endfor %}
   </div>
   {% else %}
-    <p>There are no assignments yet.</p>
+    <p class="container">There are no assignments yet.</p>
   {% endif %}
     </div>
 

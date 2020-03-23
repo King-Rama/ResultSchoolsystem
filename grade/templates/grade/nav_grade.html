@@ -2,7 +2,7 @@
 
 <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'grade:index' %}"><span class="text-info btn btn-sm btn-dark">Home</span></a>
+  <a class="navbar-brand" href="{% url 'grade:index' %}"><span class="text-info btn btn-sm btn-dark font-weight-bold">Home</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,21 +11,29 @@
         {% if user.is_authenticated and user.is_staff %}
               </li>
          <li class="nav-item active">
-        <a class="nav-link text-danger" href="{% url 'grade:master-doc' %}">New Classroom & Results</a>
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:master-doc' %}">New Classroom & Results</a>
       </li>
+
         {% else %}
 
 
           <li class="nav-item active">
-        <a class="nav-link text-success" href="{% url 'grade:normal-result' %}">Upload Results<span class="sr-only">(current)</span></a>
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:normal-result' %}">Upload Results<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-success" href="{% url 'grade:assign' %}">Assignment</a>
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:assign' %}">Assignment</a>
       </li>
         <li class="nav-item active">
-        <a class="nav-link text-success" href="{% url 'grade:students' %}">Students</a>
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:students' %}">Students</a>
         </li>
         {% endif %}
+    <li class="nav-item active">
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:grade-user-update' user.pk %}">Update Info</a>
+      </li>
+     <li class="nav-item active">
+        <a class="nav-link text-secondary font-weight-bold" href="{% url 'logout' %}">Logout</a>
+        </li>
+
 
     </ul>
   </div>

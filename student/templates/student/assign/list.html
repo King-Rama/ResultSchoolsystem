@@ -1,16 +1,11 @@
 {% extends 'student/base.html' %}
 {% block content %}
-    <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">List assignment</li>
 
-  </ol>
-</nav>
-    <div class="container row">
-    <div class="container mx-auto">
+    <div class="row">
+    <div class="container">
         {% if assignments %}
         <div class="list-group">
-        <a href="{% url 'student:assigns' %}" class="list-group-item list-group-item-action">List of uploaded assignments</a>
+        <a href="{% url 'student:assigns' %}" class="list-group-item list-group-item-action">List of uploaded assignments/announcement</a>
             {% for x in assignments %}
   <a href="{% url 'student:assign-detail' x.pk %}" class="list-group-item list-group-item-action list-group-item-primary">{{ x.title }}
   <p class="h6 text-dark">{{ x.desc }}</p>
@@ -19,7 +14,7 @@
     {% endfor %}
   </div>
   {% else %}
-    <p>There are no uploaded assignments yet.</p>
+    <p>There are no uploaded assignments/announcements yet.</p>
   {% endif %}
     </div>
 
