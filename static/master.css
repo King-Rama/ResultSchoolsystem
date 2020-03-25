@@ -3,3 +3,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+.jumbo{
+    background-image: url("img/bg13.jpeg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}

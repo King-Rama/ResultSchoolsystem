@@ -14,7 +14,7 @@ def grade_student(value):
     :return:
     """
     grade = ''
-    num = int(value)
+    num = float(value)
 
     if 100 >= num >= 80:
         return 'A'
@@ -36,7 +36,7 @@ def grade_student(value):
     :return:
     """
     grade = ''
-    num = int(value)
+    num = float(value)
 
     if 100 >= num >= 80:
         return 'Excellent'
