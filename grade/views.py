@@ -301,9 +301,10 @@ def upload_result(request):
         try:
             book = pd.read_excel(request.FILES['file']).fillna(value='-')
             header = list(book.iloc[0])
-            if Results.objects.filter(exam_name=header[2]).count() > 0:
+            # checking if the test result name is not repeated and that the results are uploaded to the same class
+            if Results.objects.filter(exam_name=header[2]).count() > 0 and request.user.username == header[1].strip(' ').lower():
                 raise ImportError
-
+            # starting the imports
             for student in range(len(book)):
                 header = list(book.iloc[student])
                 first_name, middle_name, last_name = header[0].split(' ')[0], header[0].split(' ')[-2], \
