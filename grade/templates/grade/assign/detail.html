@@ -2,8 +2,8 @@
 {% block content %}
     <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'grade:assign-list' %}">List assignment</a></li>
-    <li class="breadcrumb-item"><a href="{% url 'grade:assign' %}">Create new assignment</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'grade:assign-list' %}">List assignment/announcement</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'grade:assign' %}">Create new assignment/announcement</a></li>
   </ol>
 </nav>
     <div class="row">
@@ -16,12 +16,12 @@
   <div class="card-body">
     <h5 class="card-title"></h5>
     <p class="card-text">{{ assign_detail.description }}</p>
-    <a href="{% url 'grade:assign-update' assign_detail.pk %}" class="btn btn-secondary">Update Assignment </a>
+    <a href="{% url 'grade:assign-update' assign_detail.pk %}" class="btn btn-secondary">Update Assignment/Announcement </a>
     <p class="d-block d-sm-none d-none d-sm-block d-md-none"></p>
-      <a href="{% url 'grade:assign-delete' assign_detail.pk %}" class="btn btn-danger">Delete Assignment</a>
+      <a href="{% url 'grade:assign-delete' assign_detail.pk %}" class="btn btn-danger">Delete Assignment/Announcement</a>
   </div>
   <div class="card-footer text-muted">
-    Assignment uploaded on {{ assign_detail.created }}  {% if assign_detail.file %}
+    Assignment/Announcement uploaded on {{ assign_detail.created }}  {% if assign_detail.file %}
            file :
       <a class="btn btn-info" href="{% url 'object' assign_detail.pk %}">Download</a>
         {% endif %}

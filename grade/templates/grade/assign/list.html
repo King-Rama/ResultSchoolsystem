@@ -3,7 +3,7 @@
     <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
       <li class="breadcrumb-item active" aria-current="page">List assignment</li>
-    <li class="breadcrumb-item"><a href="{% url 'grade:assign' %}">Create new assignment</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'grade:assign' %}">Create - assignment/announcement</a></li>
   </ol>
 </nav>
 
@@ -20,7 +20,7 @@
 
         {% if assign_list %}
         <div class="list-group">
-        <a href="{% url 'grade:assign-list' %}" class="list-group-item list-group-item-action">List of uploaded assignments</a>
+        <a href="{% url 'grade:assign-list' %}" class="list-group-item list-group-item-action">List of uploaded assignments/announcement</a>
             {% for assignment in assign_list %}
   <a href="{{ assignment.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-primary">{{ assignment.title }}
   <p class="h6 text-dark">{{ assignment.desc }}</p>
@@ -29,7 +29,7 @@
     {% endfor %}
   </div>
   {% else %}
-    <p class="container">There are no assignments yet.</p>
+    <p class="container">There are no assignments/announcement yet.</p>
   {% endif %}
     </div>
 

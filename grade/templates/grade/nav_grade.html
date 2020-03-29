@@ -21,15 +21,19 @@
         <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:normal-result' %}">Upload Results<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:assign' %}">Assignment</a>
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:assign' %}">Assignment/Announcement</a>
       </li>
         <li class="nav-item active">
         <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:students' %}">Students</a>
+        </li>
+             <li class="nav-item active">
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:results-case' %}">Uploaded results</a>
         </li>
         {% endif %}
     <li class="nav-item active">
         <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:grade-user-update' user.pk %}">Update Info</a>
       </li>
+
      <li class="nav-item active">
         <a class="nav-link text-secondary font-weight-bold" href="{% url 'logout' %}">Logout</a>
         </li>

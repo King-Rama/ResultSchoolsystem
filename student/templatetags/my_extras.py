@@ -76,3 +76,15 @@ def grade_student(value):
     grade = ''
     num = float(value)
     return round(num, 1)
+
+@register.filter(name='setting_repeat')
+@stringfilter
+def setting_repeat(value):
+    """
+    this grade student subjects
+    :param value:
+    :param arg:
+    :return:
+    """
+    return set(value)
+

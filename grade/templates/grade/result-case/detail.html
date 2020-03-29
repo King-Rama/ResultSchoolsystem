@@ -1,0 +1,33 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+
+    <div class="row">
+    <div class="container mx-auto">
+
+        <div class="card text-center">
+  <div class="card-header">
+    {{ result_detail.exam_name_cl }}
+  </div>
+  <div class="card-body">
+
+
+    <p class="">You are about to Erase "{{ result_detail.uploader.username }}" Results</p>
+      <a href="{% url 'grade:result-case-delete' result_detail.pk %}" class="btn btn-danger">Delete {{ result_detail.which_exam.count }} Results</a>
+  </div>
+  <div class="card-footer text-muted">
+    Results uploaded on {{ result_detail.timed }}
+  </div>
+</div>
+
+    </div>
+    </div>
+    <hr class="mt-0 mb-4">
+
+
+{% endblock content %}
+
+
+
+
+
+

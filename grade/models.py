@@ -55,9 +55,21 @@ class ResultFileUpload(models.Model):
         return self.exam_name
 
 
+class ResultCase(models.Model):
+    exam_name_cl = models.CharField(max_length=50)
+    uploader = models.ForeignKey(User, on_delete=models.CASCADE, related_name='result_uploader', null=True)
+    timed = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.exam_name_cl
+
+    def get_absolute_url(self):
+        return reverse('grade:result-case-detail', kwargs={'pk': self.id})
+
+
 class Results(models.Model):
     user = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student_result')
-    exam_name = models.CharField(max_length=100)
+    exam_name = models.ForeignKey(ResultCase, on_delete=models.CASCADE, related_name='which_exam')
     maths = models.CharField(null=True, max_length=4)
     english = models.CharField(null=True, max_length=4)
     health = models.CharField(null=True, max_length=4)

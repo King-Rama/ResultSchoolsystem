@@ -3,13 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="4c76cfe4-a7dd-4a00-9612-1a9f748b79a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/templates/grade/assign/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/assign/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/bg13.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/tbes.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/master.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/templatetags/my_extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/templatetags/my_extras.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/password_reset_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/grade/templates/grade/room" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../learn/Reactify-Django-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
@@ -117,7 +126,8 @@
       <workItem from="1585221889255" duration="1606000" />
       <workItem from="1585366119223" duration="1905000" />
       <workItem from="1585377414848" duration="6117000" />
-      <workItem from="1585475379558" duration="2046000" />
+      <workItem from="1585475379558" duration="3208000" />
+      <workItem from="1585487369823" duration="29684000" />
     </task>
     <servers />
   </component>
@@ -129,30 +139,24 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="393" y="201" width="569" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1366.741@0.27.1366.741" timestamp="1584229548466" />
-    <state x="416" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584359919451">
+    <state x="416" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585520011518">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
+    <state x="416" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.741/1366.0.1280.1024@0.27.1366.741" timestamp="1585520011518" />
     <state x="416" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.741@0.27.1366.741" timestamp="1584359919451" />
     <state x="419" y="252" width="518" height="288" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584816471730">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="419" y="252" width="518" height="288" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1366.741@0.27.1366.741" timestamp="1584816471730" />
+    <state x="1789" y="269" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585480749950">
+      <screen x="1366" y="0" width="1280" height="1024" />
+    </state>
+    <state x="1789" y="269" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1585480749950" />
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585475378917">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741/1366.0.1280.1024@0.27.1366.741" timestamp="1585475378917" />
     <state x="1684" y="272" key="com.intellij.ide.util.TipDialog/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1585381299220" />
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1584816536880" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/templates/base.html</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

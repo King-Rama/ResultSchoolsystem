@@ -5,7 +5,7 @@
     <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
       <li class="breadcrumb-item active" aria-current="page">Create</li>
-    <li class="breadcrumb-item"><a href="{% url 'grade:assign-list' %}">List assignment/announcement</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'grade:assign-list' %}">List Assignment</a></li>
 
   </ol>
 </nav>
@@ -13,7 +13,7 @@
     <hr class="mt-0 mb-4">
     <form action="{% url 'grade:assign-delete' assign_delete.pk %}" method="post" enctype="multipart/form-data" class="container">
     {% csrf_token %}
-    <p>Are you sure you want to delete the assignment: "{{ assign_delete.title }}"?</p>
+    <p>Are you sure you want to delete the assignment: "{{  }}"?</p>
     <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
   Confirm Delete
 </button></form>

@@ -1,12 +1,11 @@
 body{
-    background-image: url("img/bg13.jpeg");
+    background-image: url("img/bg13-min.jpeg");
     background-repeat: no-repeat;
     background-size: auto;
-}
-.jumbo{
-    background-image: url("img/bg13.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: space-around;
 }
 .container-1 {
     border: 1px solid black;
@@ -16,18 +15,18 @@ body{
 }
 
 
-/*.flex-box-container-1{*/
-/*    display: flex;*/
-/*    padding: 10px;*/
-/*    flex-wrap: wrap;*/
-/*    flex-direction: row;*/
-/*    margin: 10px;*/
-/*    justify-content: flex-start;*/
-
-/*}*/
-
 .flex-box-container-1{
     display: flex;
+    padding: 10px;
     flex-wrap: wrap;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: space-evenly;
+
 }
 
+.center-things{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}

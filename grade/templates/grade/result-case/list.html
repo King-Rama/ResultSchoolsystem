@@ -1,0 +1,41 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+
+
+     {% if messages %}
+    {% for message in messages %}
+         <div class="alert alert-info">
+        {{ message|safe }}
+          </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="row">
+    <div class="container mx-auto">
+
+        {% if result_list %}
+        <div class="list-group">
+        <li class="list-group-item list-group-item-action">List of uploaded Results</li>
+            {% for x in result_list %}
+  <a href="{{ x.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-primary">{{ x.exam_name_cl }}
+  <p class="h6 text-dark">{{ x.timed|date }}</p>
+  </a>
+
+    {% endfor %}
+  </div>
+  {% else %}
+    <p class="container">There are no assignments yet.</p>
+  {% endif %}
+    </div>
+
+    </div>
+    <hr class="mt-0 mb-4">
+
+
+{% endblock content %}
+
+
+
+
+
+

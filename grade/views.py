@@ -5,13 +5,14 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.db import IntegrityError
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DeleteView, DetailView
 # Create your views here.
 from xlrd import XLRDError
 
-from .models import Results, Student, Grade, User, Assignment
+from .models import Results, Student, Grade, User, Assignment, ResultCase
 from .forms import DocUploadForm, AssignmentCreateForm
 from .decorators import teacher_required, teacher_and_staff_required
 from django.utils.decorators import method_decorator
@@ -111,7 +112,10 @@ def upload_result_master(request):
                     # then add classroom FK
                     roomy = Grade(room=grade_room, year=year, level=level, stream=stream)
                     roomy.save()
+                    exam_name_ob = ResultCase(exam_name_cl=str(room+' - '+header[2]), uploader=grade_room)
+                    exam_name_ob.save()
                     count = 2
+
                 # register student user
                 st = User.objects.create(username=username, middle_name=middle_name, first_name=first_name,
                                          last_name=last_name, is_student=True)
@@ -122,7 +126,7 @@ def upload_result_master(request):
                 stu.save()
 
                 # creating new results
-                new_results = Results(user=stu, exam_name=header[2], maths=header[3],
+                new_results = Results(user=stu, exam_name=exam_name_ob, maths=header[3],
                                       english=header[4], health=header[5], kusoma=header[6], arts_sports=header[7],
                                       kiswahili=header[8], science_tech=header[9], civics_moral=header[10],
                                       social_studies=header[11], geography=header[12], history=header[13], ict=header[14],
@@ -237,72 +241,19 @@ class AssignDeleteView(SuccessMessageMixin, DeleteView):
         messages.add_message(self.request, messages.INFO, 'Assignment deleted successfully')
         return super(AssignListView)
 
-#
-# @method_decorator([login_required, teacher_required], name='dispatch')
-# class UploadNormalResultView(SuccessMessageMixin, CreateView):
-#     template_name = 'grade/result-upload/master_doc.html'
-#     context_object_name = 'form'
-#     form_class = DocUploadForm
-#     success_url = reverse_lazy('grade:index')
-#     success_message = "Results uploaded successfully"
-#
-#     def form_valid(self, form):
-#         file = form.cleaned_data['file']
-#         count = 0
-#         try:
-#             # data entry starts here
-#             book = pd.read_excel(file).fillna(value='-')
-#
-#             for student in range(len(book)):
-#                 header = list(book.iloc[student])
-#                 first_name, middle_name, last_name = header[0].split(' ')[0], header[0].split(' ')[-2], \
-#                                                      header[0].split(' ')[-1]
-#                 username = str('{}_{}'.format(first_name, last_name)).lower()
-#                 password = str(last_name.upper())
-#                 level, stream, of, year = header[1].split(' ')
-#                 room = '{}{}{}{}'.format(level, stream, of, year).lower()
-#                 # register classroom user
-#
-#                 # register student user
-#                 st = User.objects.get(username=username)
-#                 # creating new students
-#                 stu = Student.objects.get(st.id)
-#
-#                 # creating new results
-#                 new_results = Results(user=stu, exam_name=header[2], maths=header[3],
-#                                       english=header[4], health=header[5], kusoma=header[6], arts_sports=header[7],
-#                                       kiswahili=header[8], science_tech=header[9], civics_moral=header[10],
-#                                       social_studies=header[11], geography=header[12], history=header[13],
-#                                       ict=header[14],
-#                                       v_skills=header[15], pds=header[16], science=header[17], subject_taken=header[18],
-#                                       marks=header[19], mean_score=header[20])
-#
-#                 new_results.save()
-#             return super().form_valid(form)
-#
-#         except IntegrityError as error:
-#             return reverse_lazy('grade:index')
-
 
 @login_required
 @teacher_and_staff_required
 def upload_result(request):
     form = DocUploadForm(request.POST, request.FILES)
     count = 0
-    # files = request.FILES['file'].name
-    # print(files)
-    # if request.FILES.get('file', False):
-    #     pass
-    # else:
-    #     messages.add_message(request, messages.ERROR, 'Urecognized file type')
-    #     redirect('grade:master-doc')
 
     if form.is_valid():
         try:
             book = pd.read_excel(request.FILES['file']).fillna(value='-')
             header = list(book.iloc[0])
             # checking if the test result name is not repeated and that the results are uploaded to the same class
-            if Results.objects.filter(exam_name=header[2]).count() > 0 and request.user.username == header[1].strip(' ').lower():
+            if ResultCase.objects.filter(exam_name_cl=header[2]).exists() :
                 raise ImportError
             # starting the imports
             for student in range(len(book)):
@@ -320,6 +271,8 @@ def upload_result(request):
 
                     # then add classroom FK
                     roomy = Grade.objects.get(room=grade_room, year=year, level=level, stream=stream)
+                    exam_name_ob = ResultCase(exam_name_cl=str(room+' - '+header[2]), uploader=grade_room)
+                    exam_name_ob.save()
                     count = 2
                 # register student user
                 st = User.objects.get(username=username)
@@ -328,7 +281,7 @@ def upload_result(request):
 
 
                 # creating new results
-                new_results = Results(user=stu, exam_name=header[2], maths=header[3],
+                new_results = Results(user=stu, exam_name=exam_name_ob, maths=header[3],
                                       english=header[4], health=header[5], kusoma=header[6], arts_sports=header[7],
                                       kiswahili=header[8], science_tech=header[9], civics_moral=header[10],
                                       social_studies=header[11], geography=header[12], history=header[13], ict=header[14],
@@ -351,6 +304,11 @@ def upload_result(request):
             messages.add_message(request, messages.ERROR, '{} is already added, please add a new result document'.format(header[2]))
             redirect('grade:normal-result')
 
+        except Grade.DoesNotExist as error:
+            messages.add_message(request, messages.ERROR,
+                                 'This document is for: "{}" and this is : "{}"'.format(header[1], request.user.username))
+            redirect('grade:normal-result')
+
     return render(request, 'grade/result-upload/master_doc.html', {'form': form})
 
 
@@ -368,15 +326,9 @@ class GradeDetailView(DetailView):
 @method_decorator([login_required, teacher_and_staff_required], name='dispatch')
 class UserUpdateView(UpdateView):
     model = User
-
-    fields = ['username',]
+    fields = ['username']
     template_name = 'grade/update.html'
     context_object_name = 'st_user'
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['stu'] = Student.class_room
-    #     return context
 
 
 @login_required
@@ -396,3 +348,33 @@ def change_password(request):
     return render(request, 'grade/room/change_password.html', {
         'form': form
     })
+
+
+@method_decorator([login_required, teacher_required], name='dispatch')
+class ResultCaseListView(ListView):
+    model = ResultCase
+    template_name = 'grade/result-case/list.html'
+    context_object_name = 'result_list'
+
+    def get_queryset(self):
+        return ResultCase.objects.filter(uploader__username=self.request.user.username)
+
+
+@method_decorator([login_required, teacher_required], name='dispatch')
+class ResultCaseDetailView(DetailView):
+    model = ResultCase
+    template_name = 'grade/result-case/detail.html'
+    context_object_name = 'result_detail'
+
+
+@method_decorator([login_required, teacher_required], name='dispatch')
+class ResultCaseDeleteView(SuccessMessageMixin, DeleteView):
+    model = ResultCase
+    template_name = 'grade/result-case/confirm.html'
+    context_object_name = 'result_delete'
+    success_url = reverse_lazy('grade:results-case')
+    success_message = 'Results deleted successful'
+
+    def form_valid(self, form):
+        messages.add_message(self.request, messages.INFO, 'Results deleted successfully')
+        return super(ResultListView)

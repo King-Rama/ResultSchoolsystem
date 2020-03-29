@@ -1,0 +1,16 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+
+    </div>
+    <hr class="mt-0 mb-4">
+    <form action="{% url 'grade:result-case-delete' result_delete.pk %}" method="post" enctype="multipart/form-data" class="container">
+    {% csrf_token %}
+    <p>Are you sure you want to delete the Result: "{{ result_delete.exam_name_cl }}"?</p>
+    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  Confirm Delete
+</button></form>
+    <hr class="mt-0 mb-4">
+
+{% endblock content %}
