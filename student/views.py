@@ -53,9 +53,8 @@ class AssignmentDetailView(DetailView):
 
 
 @method_decorator([login_required, student_required], name='dispatch')
-class USerUpdateView(UpdateView):
+class USerUpdateView(DetailView):
     model = User
-    fields = ['first_name', 'middle_name', 'last_name',]
     template_name = 'student/update.html'
     context_object_name = 'st_user'
 
@@ -73,10 +72,10 @@ def change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)  # Important!
-            messages.success(request, 'Your password was successfully updated!')
+            messages.add_message(request, messages.SUCCESS, 'Your password was successfully updated!')
             return redirect('student:index')
         else:
-            messages.error(request, 'Please correct the error below.')
+            messages.add_message(request, messages.ERROR, 'Please correct the error below.')
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'accounts/change_password.html', {

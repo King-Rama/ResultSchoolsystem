@@ -1,0 +1,28 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+
+     {% if messages %}
+    {% for message in messages %}
+         <div class="alert alert-info">
+        {{ message|safe }}
+          </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="row">
+    <div class="container mx-auto">
+
+
+    </div>
+
+    </div>
+    <hr class="mt-0 mb-4">
+
+
+{% endblock content %}
+
+
+
+
+
+

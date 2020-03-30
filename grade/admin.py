@@ -1,11 +1,8 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+
 from .models import ResultFileUpload, Results, User, Student, Assignment, Grade, ResultCase
 # Register your models here.
 
-admin.site.register(ResultFileUpload)
-admin.site.register(ResultCase)
-admin.site.register(Results)
-admin.site.register(Student)
-admin.site.register(Assignment)
-admin.site.register(User)
-admin.site.register(Grade)
+
+admin.site.register(User, UserAdmin)

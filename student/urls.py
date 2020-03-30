@@ -1,4 +1,3 @@
-from django.contrib.auth.decorators import login_required
 from django.urls import path
 from student.views import ResultDetailView, ResultListView, AssignmentDetailView, AssignmentListView, StudentHomePage, \
     USerUpdateView, change_password

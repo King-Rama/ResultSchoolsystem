@@ -8,18 +8,47 @@
 
         <div class="card text-center">
   <div class="card-header">
-    <a class="text-danger" href="{% url 'student:change_password' %}">Change Password</a>
+    <h5>Students Information</h5>
   </div>
-            {% load crispy_forms_tags %}
- <hr class="mt-0 mb-4">
-    <form method="post" enctype="multipart/form-data" class="container">
-    {% csrf_token %}
-    {{ form|crispy }}
 
-    <input type="submit" class="btn btn-success btn-block" value="Update info">
-    </form>
+             <table class="table table-bordered table-responsive">
+          <thead>
+    <tr>
 
-  <div class="card-footer text-muted">
+      <th scope="col">First Name</th>
+        <td>{{ st_user.first_name }}</td>
+
+
+
+
+
+    </tr>
+  </thead>
+            <tbody>
+<tr>
+                <th scope="col">Middle Name</th>
+                <td>{{ st_user.middle_name }}</td>
+
+
+
+</tr>
+            <tr>
+                 <th scope="col">Last Name</th>
+                <td>{{ st_user.last_name }}</td>
+            </tr>
+            <tr>
+                 <th scope="col">Username</th>
+                <td>{{ st_user.username }}</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+  <div class="card-footer text-muted text-info">
+      Consult Your Teacher for any changes!
   </div>
 </div>
 

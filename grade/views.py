@@ -1,5 +1,5 @@
 import pandas as pd
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -14,71 +14,9 @@ from xlrd import XLRDError
 
 from .models import Results, Student, Grade, User, Assignment, ResultCase
 from .forms import DocUploadForm, AssignmentCreateForm
-from .decorators import teacher_required, teacher_and_staff_required
+from .decorators import teacher_required, teacher_and_staff_required, staff_required
 from django.utils.decorators import method_decorator
 from django.contrib import messages
-
-#
-# @method_decorator([login_required, teacher_and_staff_required], name='dispatch')
-# class UploadGradeView(CreateView):
-#     template_name = 'grade/result-upload/master_doc.html'
-#     context_object_name = 'form'
-#     form_class = DocUploadForm
-#     success_url = reverse_lazy('grade:index')
-#
-#     def form_valid(self, form):
-#         file = form.cleaned_data['file']
-#         if file.name.endswith('.xls'):
-#             pass
-#         else:
-#             messages.add_message(self.request, messages.INFO, 'File is not an excel / spreadsheet file.')
-#             return self.form_invalid(form)
-#         count = 0
-#         try:
-#
-#             # data entry starts here
-#             book = pd.read_excel(file).fillna(value='-')
-#
-#             for student in range(len(book)):
-#                 header = list(book.iloc[student])
-#                 first_name, middle_name, last_name = header[0].split(' ')[0], header[0].split(' ')[-2], \
-#                                                      header[0].split(' ')[-1]
-#                 username = str('{}_{}'.format(first_name, last_name)).lower()
-#                 password = str(last_name.upper())
-#                 level, stream, of, year = header[1].split(' ')
-#                 room = '{}{}{}{}'.format(level, stream, of, year).lower()
-#                 # register classroom user
-#                 if count < 1:
-#                     grade_room = User.objects.create(username=room, password='burhani', is_teacher=True)
-#                     grade_room.set_password('burhani')
-#                     grade_room.save()
-#                     # then add classroom FK
-#                     roomy = Grade(room=grade_room, year=year, level=level, stream=stream)
-#                     roomy.save()
-#                     count = 2
-#                 # register student user
-#                 st = User.objects.create(username=username, middle_name=middle_name, first_name=first_name,
-#                                          last_name=last_name, is_student=True)
-#                 st.set_password(password)
-#                 st.save()
-#                 # creating new students
-#                 stu = Student(user=st, class_room=roomy)
-#                 stu.save()
-#
-#                 # creating new results
-#                 new_results = Results(user=stu, exam_name=header[2], maths=header[3],
-#                                       english=header[4], health=header[5], kusoma=header[6], arts_sports=header[7],
-#                                       kiswahili=header[8], science_tech=header[9], civics_moral=header[10],
-#                                       social_studies=header[11], geography=header[12], history=header[13], ict=header[14],
-#                                       v_skills=header[15], pds=header[16], science=header[17], subject_taken=header[18],
-#                                       marks=header[19], mean_score=header[20])
-#
-#                 new_results.save()
-#
-#         except IntegrityError as error:
-#
-#
-#         return self.form_valid(form)
 
 @login_required
 @teacher_and_staff_required
@@ -152,6 +90,7 @@ def upload_result_master(request):
 class StudentListView(ListView):
     template_name = 'grade/student/list.html'
     model = Student
+    paginate_by = 10
     context_object_name = 'students'
 
     def get_queryset(self):
@@ -179,10 +118,10 @@ class ResultDetailView(DetailView):
     context_object_name = 'result_detail'
 
 
-@method_decorator([login_required, teacher_required], name='dispatch')
-class ClassRoomListView(ListView):
-    model = Grade
-
+# @method_decorator([login_required, teacher_required], name='dispatch')
+# class ClassRoomListView(ListView):
+#     model = Grade
+#
 
 @method_decorator([login_required, teacher_and_staff_required], name='dispatch')
 class GradeHomePage(TemplateView):
@@ -312,37 +251,26 @@ def upload_result(request):
     return render(request, 'grade/result-upload/master_doc.html', {'form': form})
 
 
-
-
-
-
-@method_decorator([login_required, teacher_required], name='dispatch')
-class GradeDetailView(DetailView):
-    model = Grade
-    template_name = 'grade/room/detail.html'
-    context_object_name = 'grade_detail'
-
-
-@method_decorator([login_required, teacher_and_staff_required], name='dispatch')
-class UserUpdateView(UpdateView):
-    model = User
-    fields = ['username']
-    template_name = 'grade/update.html'
-    context_object_name = 'st_user'
+# @method_decorator([login_required, teacher_required], name='dispatch')
+# class GradeDetailView(DetailView):
+#     model = Grade
+#     template_name = 'grade/room/detail.html'
+#     context_object_name = 'grade_detail'
 
 
 @login_required
-@teacher_and_staff_required
+@teacher_required
 def change_password(request):
+
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)  # Important!
-            messages.success(request, 'Your password was successfully updated!')
-            return redirect('student:index')
+            messages.add_message(request, messages.SUCCESS, 'Your password was successfully updated!')
+            return redirect('grade:index')
         else:
-            messages.error(request, 'Please correct the error below.')
+            messages.add_message(request, messages.ERROR, 'Please correct the error below.')
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'grade/room/change_password.html', {
@@ -353,6 +281,7 @@ def change_password(request):
 @method_decorator([login_required, teacher_required], name='dispatch')
 class ResultCaseListView(ListView):
     model = ResultCase
+    paginate_by = 10
     template_name = 'grade/result-case/list.html'
     context_object_name = 'result_list'
 
@@ -378,3 +307,31 @@ class ResultCaseDeleteView(SuccessMessageMixin, DeleteView):
     def form_valid(self, form):
         messages.add_message(self.request, messages.INFO, 'Results deleted successfully')
         return super(ResultListView)
+
+
+@method_decorator([login_required, staff_required], name='dispatch')
+class DeleteAllStudents(TemplateView):
+    model = User
+    template_name = 'grade/result-case/delete/students.html'
+    context_object_name = 'delete'
+    success_url = reverse_lazy('grade:index')
+
+    def form_valid(self, form):
+        messages.add_message(self.request, messages.INFO, 'All classes and students have been deleted successfully')
+        return super(GradeHomePage)
+
+    def get_queryset(self):
+        return User.objects.filter(is_teacher=True, is_student=True)
+
+
+def delete_all(request):
+    st = User.objects.filter(is_student=True)
+    st1 = User.objects.filter(is_teacher=True)
+
+    st.delete()
+    st1.delete()
+
+    messages.add_message(request, messages.SUCCESS, 'All classes and students are successfully deleted')
+
+    return redirect('grade:index')
+

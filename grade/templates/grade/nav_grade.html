@@ -1,4 +1,4 @@
-
+{% load static %}
 
 <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -12,6 +12,10 @@
               </li>
          <li class="nav-item active">
         <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:master-doc' %}">New Classroom & Results</a>
+      </li>
+              <li class="nav-item active">
+        <a class="nav-link text-primary font-weight-bold" onclick="poping()" href="{% url 'grade:desolve-all' %}">End Year</a>
+              <script src="{% static 'js/master.js'  %}"></script>
       </li>
 
         {% else %}
@@ -27,11 +31,11 @@
         <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:students' %}">Students</a>
         </li>
              <li class="nav-item active">
-        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:results-case' %}">Uploaded results</a>
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:results-case' %}">Results</a>
         </li>
         {% endif %}
     <li class="nav-item active">
-        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:grade-user-update' user.pk %}">Update Info</a>
+        <a class="nav-link text-danger font-weight-bold" href="{% url 'grade:change_password' %}">*password</a>
       </li>
 
      <li class="nav-item active">

@@ -6,8 +6,18 @@
 {% block content %}
     <div class="container">
     <p></p>
-    <p class="h4">Welcome: <span class="badge badge-light text-primary">{{ user.username }}</span> </p>
+
+       {% if messages %}
+        {% for message in messages %}
+
+            <div class="alert alert-info">
+                {{ message|safe }}
+            </div>
+        {% endfor %}
+       {% else %}
+           <p class="h4">Welcome: <span class="badge badge-light text-primary">{{ user.username }}</span> </p>
         <p class="h5"> You can perform various class related activities in here</p>
+    {% endif %}
     </div>
 
 
