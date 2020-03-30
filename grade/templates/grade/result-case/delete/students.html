@@ -1,17 +1,17 @@
 {% extends 'grade/base_grade.html' %}
 {% block content %}
-    {% load crispy_forms_tags %}
+
     <div class="container">
+          <hr class="mt-0 mb-4">
+
+
+    <p>Are you sure you want to delete all the class and students ?</p>
+    <a type="submit" class="btn btn-danger" href="{% url 'grade:desolve-all-confirm' %}" >
+  Confirm Delete
+</a>
 
     </div>
-    <hr class="mt-0 mb-4">
-    <form action="{% url 'grade:desolve-all'%}" method="post" enctype="multipart/form-data" class="container">
-    {% csrf_token %}
-    <p>Are you sure you want to delete all the class?</p>
-    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-  Confirm Delete
-</button>
-    </form>
+
     <hr class="mt-0 mb-4">
 
 {% endblock content %}

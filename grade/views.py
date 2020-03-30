@@ -314,14 +314,6 @@ class DeleteAllStudents(TemplateView):
     model = User
     template_name = 'grade/result-case/delete/students.html'
     context_object_name = 'delete'
-    success_url = reverse_lazy('grade:index')
-
-    def form_valid(self, form):
-        messages.add_message(self.request, messages.INFO, 'All classes and students have been deleted successfully')
-        return super(GradeHomePage)
-
-    def get_queryset(self):
-        return User.objects.filter(is_teacher=True, is_student=True)
 
 
 def delete_all(request):

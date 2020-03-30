@@ -22,6 +22,7 @@ urlpatterns = [
     path('result/list/cases/', ResultCaseListView.as_view(), name='results-case'),
     path('result/detail/cases/<int:pk>/', ResultCaseDetailView.as_view(), name='result-case-detail'),
     path('result/delete/cases/<int:pk>/', ResultCaseDeleteView.as_view(), name='result-case-delete'),
-    path('school-end/delete/all/', delete_all, name='desolve-all')
+    path('school-end/delete/all/', DeleteAllStudents.as_view(), name='desolve-all'),
+    path('school-end/delete/confirmed/', delete_all, name='desolve-all-confirm'),
 
 ]
