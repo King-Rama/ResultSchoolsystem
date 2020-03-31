@@ -13,7 +13,7 @@ from django.views.generic import TemplateView, CreateView, ListView, UpdateView,
 from xlrd import XLRDError
 
 from .models import Results, Student, Grade, User, Assignment, ResultCase
-from .forms import DocUploadForm, AssignmentCreateForm
+from .forms import DocUploadForm, AssignmentCreateForm, ResetPassword
 from .decorators import teacher_required, teacher_and_staff_required, staff_required
 from django.utils.decorators import method_decorator
 from django.contrib import messages
@@ -329,3 +329,30 @@ def delete_all(request):
 
     return redirect('grade:index')
 
+
+def reset_password(request):
+    if request.method == "POST":
+
+        try:
+
+            form = ResetPassword(request.POST)
+            if form.is_valid():
+                fname = form.cleaned_data['full_name'].split(' ')[0]
+                lname = form.cleaned_data['full_name'].split(' ')[-1]
+                user_ob = '{}_{}'.format(fname, lname).lower()
+                usr = User.objects.get(username=user_ob)
+                new_pass = lname.upper()
+                usr.set_password(new_pass)
+                # update_session_auth_hash(usr)
+                usr.save()
+                messages.add_message(request, messages.SUCCESS, 'Password for {} : {} succsfully updated to default'.format(user_ob, new_pass))
+            return redirect('grade:index')
+
+        except User.DoesNotExist:
+            messages.add_message(request, messages.SUCCESS, 'User is not in the system')
+            return redirect('grade:index')
+
+    else:
+        form = ResetPassword()
+
+    return render(request, 'grade/pass_change.html', {'form': form})

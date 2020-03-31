@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import AssignCreateView, AssignUpdateView, AssignDetailView, AssignDeleteView, AssignListView, \
     StudentListView, GradeHomePage, StudentDetailView, ResultListView, ResultDetailView, upload_result_master, \
-    change_password, upload_result, ResultCaseListView, ResultCaseDeleteView, ResultCaseDetailView, DeleteAllStudents, delete_all
+    change_password, upload_result, ResultCaseListView, ResultCaseDeleteView, ResultCaseDetailView, DeleteAllStudents, delete_all, reset_password
 
 app_name = 'grade'
 
@@ -24,5 +24,6 @@ urlpatterns = [
     path('result/delete/cases/<int:pk>/', ResultCaseDeleteView.as_view(), name='result-case-delete'),
     path('school-end/delete/all/', DeleteAllStudents.as_view(), name='desolve-all'),
     path('school-end/delete/confirmed/', delete_all, name='desolve-all-confirm'),
+    path('pass/reset/student/', reset_password, name='reset-pass'),
 
 ]

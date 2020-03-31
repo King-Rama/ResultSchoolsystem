@@ -18,8 +18,8 @@
               <script src="{% static 'js/master.js'  %}"></script>
       </li>
                <li class="nav-item active">
-        <a class="nav-link text-primary font-weight-bold" href="/admin/">Admin</a>
-              <script src="{% static 'js/master.js'  %}"></script>
+        <a class="nav-link text-primary font-weight-bold" href="{% url 'grade:reset-pass' %}">Reset *</a>
+
       </li>
 
         {% else %}

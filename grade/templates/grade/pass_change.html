@@ -1,0 +1,17 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <hr class="mt-0 mb-4">
+    <div class="container">
+
+        <form method="post" enctype="multipart/form-data" class="container">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-success btn-block" value="Reset Password">
+    </form>
+    <hr class="mt-0 mb-4">
+
+
+    </div>
+
+{% endblock content %}
