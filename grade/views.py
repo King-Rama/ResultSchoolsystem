@@ -316,6 +316,8 @@ class DeleteAllStudents(TemplateView):
     context_object_name = 'delete'
 
 
+@login_required
+@staff_required
 def delete_all(request):
     st = User.objects.filter(is_student=True)
     st1 = User.objects.filter(is_teacher=True)

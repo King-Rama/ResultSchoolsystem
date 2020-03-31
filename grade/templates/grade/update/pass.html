@@ -1,0 +1,11 @@
+
+<form method="post" enctype="multipart/form-data" action="{% url 'grade:reset-pass' %}">
+    {% csrf_token %}
+    <select>
+    {% for x in students %}
+        <option name="st_select">{{ x.first_name }} {{ x.middle_name }} {{ x.last_name }}</option>
+    {{ x.username }}
+{% endfor %}
+ </select>
+<input type="button" class="btn btn-primary" value="Reset Password">
+</form>

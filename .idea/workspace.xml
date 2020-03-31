@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/result-case/delete/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/result-case/delete/students.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +15,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -118,7 +116,7 @@
       <workItem from="1585377414848" duration="6117000" />
       <workItem from="1585475379558" duration="3208000" />
       <workItem from="1585487369823" duration="30665000" />
-      <workItem from="1585578588941" duration="22653000" />
+      <workItem from="1585578588941" duration="28401000" />
     </task>
     <servers />
   </component>
