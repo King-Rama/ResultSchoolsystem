@@ -337,15 +337,25 @@ def reset_password(request):
 
             form = ResetPassword(request.POST)
             if form.is_valid():
-                fname = form.cleaned_data['full_name'].split(' ')[0]
-                lname = form.cleaned_data['full_name'].split(' ')[-1]
-                user_ob = '{}_{}'.format(fname, lname).lower()
-                usr = User.objects.get(username=user_ob)
-                new_pass = lname.upper()
-                usr.set_password(new_pass)
-                # update_session_auth_hash(usr)
-                usr.save()
-                messages.add_message(request, messages.SUCCESS, 'Password for {} : {} succsfully updated to default'.format(user_ob, new_pass))
+                data = form.cleaned_data['full_name']
+                if 'std' in data:
+                    user_name = data.rstrip().lstrip().lower()
+                    usr = User.objects.get(username=user_name)
+                    new_pass = 'burhani'
+                    usr.set_password(new_pass)
+                    # update_session_auth_hash(usr)
+                    usr.save()
+                else:
+                    f_name = data.split(' ')[0]
+                    l_name = data.split(' ')[-1]
+                    user_name = '{}_{}'.format(f_name, l_name).lower()
+                    usr = User.objects.get(username=user_name)
+                    new_pass = l_name.upper()
+                    usr.set_password(new_pass)
+                    # update_session_auth_hash(usr)
+                    usr.save()
+
+                messages.add_message(request, messages.SUCCESS, 'Password for: "{}" is now "{}" successfully updated to default'.format(data, new_pass))
             return redirect('grade:index')
 
         except User.DoesNotExist:

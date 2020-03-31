@@ -16,19 +16,19 @@ def grade_student(value):
     grade = ''
     num = float(value)
 
-    if 100 >= num >= 90:
+    if 101 > num >= 90.0:
         return 'A'
-    elif 89 >= num >= 80:
+    elif 90 > num >= 80.0:
         return 'B+'
-    elif 79 >= num >= 70:
+    elif 80 > num >= 70.0:
         return 'B'
-    elif 69 >= num >= 60:
+    elif 70 > num >= 60.0:
         return 'C+'
-    elif 59 >= num >= 50:
+    elif 60 > num >= 50.0:
         return 'C'
-    elif 49 >= num >= 40:
+    elif 50 > num >= 40.0:
         return 'D'
-    elif 39 >= num >= 30:
+    elif 40 > num >= 30.0:
         return 'E'
     elif num < 30:
         return 'F'
@@ -46,19 +46,19 @@ def grade_student(value):
     grade = ''
     num = float(value)
 
-    if 100 >= num >= 90:
+    if 101 > num >= 90:
         return 'Excellent'
-    elif 89 >= num >= 80:
+    elif 90 > num >= 80:
         return 'Very Good'
-    elif 79 >= num >= 70:
+    elif 80 > num >= 70:
         return 'Good'
-    elif 69 >= num >= 60:
+    elif 70 > num >= 60:
         return 'Fairly Satisfactory'
-    elif 59 >= num >= 50:
+    elif 60 > num >= 50:
         return 'Satisfactory'
-    elif 49 >= num >= 40:
+    elif 50 > num >= 40:
         return 'More Effort Required'
-    elif 39 >= num >= 30:
+    elif 40 > num >= 30:
         return 'Below Required Standard'
     elif num < 30:
         return 'Fail'
