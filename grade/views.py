@@ -123,7 +123,7 @@ class ResultDetailView(DetailView):
 #     model = Grade
 #
 
-@method_decorator([login_required, teacher_and_staff_required], name='dispatch')
+@method_decorator([teacher_and_staff_required], name='dispatch')
 class GradeHomePage(TemplateView):
     template_name = 'grade/base_grade.html'
 
@@ -259,7 +259,7 @@ def upload_result(request):
 
 
 @login_required
-@teacher_required
+@teacher_and_staff_required
 def change_password(request):
 
     if request.method == 'POST':
@@ -330,6 +330,8 @@ def delete_all(request):
     return redirect('grade:index')
 
 
+@login_required
+@teacher_and_staff_required
 def reset_password(request):
     if request.method == "POST":
 

@@ -13,7 +13,7 @@ from grade.decorators import student_required
 from grade.models import Results, Assignment, User, Student
 
 
-@method_decorator([login_required, student_required], name='dispatch')
+@method_decorator([student_required], name='dispatch')
 class StudentHomePage(TemplateView):
     template_name = 'student/base.html'
 

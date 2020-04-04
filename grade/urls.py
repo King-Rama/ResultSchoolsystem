@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.urls import path
 from .views import AssignCreateView, AssignUpdateView, AssignDetailView, AssignDeleteView, AssignListView, \
     StudentListView, GradeHomePage, StudentDetailView, ResultListView, ResultDetailView, upload_result_master, \
@@ -7,7 +8,7 @@ app_name = 'grade'
 
 urlpatterns = [
     path('upload/', upload_result_master, name='master-doc'),
-    path('', GradeHomePage.as_view(), name='index'),
+    path('', login_required(GradeHomePage.as_view()), name='index'),
     path('new-assignment/', AssignCreateView.as_view(), name='assign'),
     path('list-assignment/', AssignListView.as_view(), name='assign-list'),
     path('update-assignment/<int:pk>/', AssignUpdateView.as_view(), name='assign-update'),
