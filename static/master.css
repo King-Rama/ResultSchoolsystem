@@ -1,5 +1,9 @@
 body{
-    background: url("https://burhanischools.sc.tz/images/site/bg14.jpeg") no-repeat fixed top center;
+    background-image: url("img/bg13.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-items: center;
