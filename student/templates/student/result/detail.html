@@ -18,170 +18,170 @@
 
         <table class="table table-bordered table-secondary table-responsive">
           <thead>
-    <tr>
+    <tr">
 
-      <th scope="col">Subject</th>
-      <th scope="col">Score</th>
-        <th scope="col">Grade</th>
+      <th scope="col" class="border border-secondary">Subject</th>
+      <th scope="col" class="border border-secondary">Score</th>
+        <th scope="col" class="border border-secondary">Grade</th>
     </tr>
   </thead>
             <tbody>
             {% if result_detail.maths != '-' %}
 <tr>
 
-                <td>Mathematics</td>
-                <td>{{ result_detail.maths }}</td>
-                <td>{{ result_detail.maths|grade_student }}</td>
+                <td class="border border-secondary">Mathematics</td>
+                <td class="border border-secondary">{{ result_detail.maths }}</td>
+                <td class="border border-secondary">{{ result_detail.maths|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.english != '-' %}
             <tr>
 
-                <td>English</td>
-                <td>{{ result_detail.english }}</td>
-                <td>{{ result_detail.english|grade_student }}</td>
+                <td class="border border-secondary">English</td>
+                <td class="border border-secondary">{{ result_detail.english }}</td>
+                <td class="border border-secondary">{{ result_detail.english|grade_student }}</td>
 </tr>
             {% endif %}
             {% if result_detail.health != '-' %}
             <tr>
 
-                <td>Health Care & Environment</td>
-                <td>{{ result_detail.health }}</td>
-                <td>{{ result_detail.health|grade_student }}</td>
+                <td class="border border-secondary">Health Care & Environment</td>
+                <td class="border border-secondary">{{ result_detail.health }}</td>
+                <td class="border border-secondary">{{ result_detail.health|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.kusoma != '-' %}
             <tr>
 
-                <td>Kusoma/Kuandika</td>
-                <td>{{ result_detail.kusoma }}</td>
-                <td>{{ result_detail.kusoma|grade_student }}</td>
+                <td class="border border-secondary">Kusoma/Kuandika</td>
+                <td class="border border-secondary">{{ result_detail.kusoma }}</td>
+                <td class="border border-secondary">{{ result_detail.kusoma|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.arts_sports != '-' %}
             <tr>
 
-                <td>Arts and Sports</td>
-                <td>{{ result_detail.arts_sports }}</td>
-                <td>{{ result_detail.arts_sports|grade_student }}</td>
+                <td class="border border-secondary">Arts and Sports</td>
+                <td class="border border-secondary">{{ result_detail.arts_sports }}</td>
+                <td class="border border-secondary">{{ result_detail.arts_sports|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.kiswahili != '-' %}
             <tr>
 
-                <td>Kiswahili</td>
-                <td>{{ result_detail.kiswahili }}</td>
-                <td>{{ result_detail.kiswahili|grade_student }}</td>
+                <td class="border border-secondary">Kiswahili</td>
+                <td class="border border-secondary">{{ result_detail.kiswahili }}</td>
+                <td class="border border-secondary">{{ result_detail.kiswahili|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.science_tech != '-' %}
             <tr>
 
-                <td>Science & Tech</td>
-                <td>{{ result_detail.science_tech }}</td>
-                <td>{{ result_detail.science_tech|grade_student }}</td>
+                <td class="border border-secondary">Science & Tech</td>
+                <td class="border border-secondary">{{ result_detail.science_tech }}</td>
+                <td class="border border-secondary">{{ result_detail.science_tech|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.civics_moral != '-' %}
             <tr>
 
-                <td>Civics & Moral</td>
-                <td>{{ result_detail.civics_moral }}</td>
-                <td>{{ result_detail.civics_moral|grade_student }}</td>
+                <td class="border border-secondary">Civics & Moral</td>
+                <td class="border border-secondary">{{ result_detail.civics_moral }}</td>
+                <td class="border border-secondary">{{ result_detail.civics_moral|grade_student }}</td>
 </tr>
             {% endif %}
             <tr>
                 {% if result_detail.social_studies != '-' %}
 
-                <td>Social Studies</td>
-                <td>{{ result_detail.social_studies }}</td>
-                    <td>{{ result_detail.social_studies|grade_student }}</td>
+                <td class="border border-secondary">Social Studies</td>
+                <td class="border border-secondary">{{ result_detail.social_studies }}</td>
+                    <td class="border border-secondary">{{ result_detail.social_studies|grade_student }}</td>
 </tr>
 {% endif %}
 
             {% if result_detail.geography != '-' %}
             <tr>
 
-                <td>Geography</td>
-                <td>{{ result_detail.geography }}</td>
-                <td>{{ result_detail.geography|grade_student }}</td>
+                <td class="border border-secondary">Geography</td>
+                <td class="border border-secondary">{{ result_detail.geography }}</td>
+                <td class="border border-secondary">{{ result_detail.geography|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.history != '-' %}
             <tr>
 
-                <td>History</td>
-                <td>{{ result_detail.history }}</td>
-            <td>{{ result_detail.history|grade_student }}</td>
+                <td class="border border-secondary">History</td>
+                <td class="border border-secondary">{{ result_detail.history }}</td>
+            <td class="border border-secondary">{{ result_detail.history|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.ict != '-' %}
             <tr>
 
-                <td>ICT</td>
-                <td>{{ result_detail.ict }}</td>
-                <td>{{ result_detail.ict|grade_student }}</td>
+                <td class="border border-secondary">ICT</td>
+                <td class="border border-secondary">{{ result_detail.ict }}</td>
+                <td class="border border-secondary">{{ result_detail.ict|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.v_skills != '-' %}
             <tr>
 
-                <td>V Skills</td>
-                <td>{{ result_detail.v_skills }}</td>
-                <td>{{ result_detail.v_skills|grade_student }}</td>
+                <td class="border border-secondary">V Skills</td>
+                <td class="border border-secondary">{{ result_detail.v_skills }}</td>
+                <td class="border border-secondary">{{ result_detail.v_skills|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.pds != '-' %}
             <tr>
 
-                <td>PDS</td>
-                <td>{{ result_detail.pds }}</td>
-                <td>{{ result_detail.pds|grade_student }}</td>
+                <td class="border border-secondary">PDS</td>
+                <td class="border border-secondary">{{ result_detail.pds }}</td>
+                <td class="border border-secondary">{{ result_detail.pds|grade_student }}</td>
 </tr>
             {% endif %}
 
             {% if result_detail.science != '-' %}
             <tr>
 
-                <td>Science</td>
-                <td>{{ result_detail.science }}</td>
-                <td>{{ result_detail.science|grade_student }}</td>
+                <td class="border border-secondary">Science</td>
+                <td class="border border-secondary">{{ result_detail.science }}</td>
+                <td class="border border-secondary">{{ result_detail.science|grade_student }}</td>
 </tr>
             {% endif %}
 
 
 <tr>
-    <th></th>
-                <td></td>
-                <td></td>
+    <th class="border border-secondary"></th>
+                <td class="border border-secondary"></td>
+                <td class="border border-secondary"></td>
 </tr>
             <tr>
 
-                <td>Subjects Taken</td>
-                <td colspan="2">{{ result_detail.subject_taken }}</td>
+                <td class="border border-secondary">Subjects Taken</td>
+                <td colspan="2" class="border border-secondary">{{ result_detail.subject_taken }}</td>
 </tr>
 
 
             <tr>
 
-                <td>Mean Score</td>
-                <td >{{ result_detail.mean_score|round }}</td>
-                <td>{{ result_detail.mean_score|grade_student }}</td>
+                <td class="border border-secondary">Mean Score</td>
+                <td class="border border-secondary">{{ result_detail.mean_score|round }}</td>
+                <td class="border border-secondary">{{ result_detail.mean_score|grade_student }}</td>
 </tr>
             <tr>
 
-                <td>Remarks</td>
-                <td colspan="2">{{ result_detail.mean_score|grade }}</td>
+                <td class="border border-secondary">Remarks</td>
+                <td colspan="2" class="border border-secondary">{{ result_detail.mean_score|grade }}</td>
 </tr>
             </tbody>
         </table>

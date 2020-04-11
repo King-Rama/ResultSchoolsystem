@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4c76cfe4-a7dd-4a00-9612-1a9f748b79a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/master.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +118,7 @@
       <workItem from="1585660199291" duration="7028000" />
       <workItem from="1585999933378" duration="398000" />
       <workItem from="1586000824220" duration="2910000" />
+      <workItem from="1586007693174" duration="1231000" />
     </task>
     <servers />
   </component>
@@ -149,11 +143,12 @@
       <screen x="1366" y="0" width="1280" height="1024" />
     </state>
     <state x="1789" y="269" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1585480749950" />
-    <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585660808289">
-      <screen x="0" y="27" width="1366" height="741" />
+    <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1586008952022">
+      <screen x="0" y="27" width="2646" height="997" />
     </state>
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741/1366.0.1280.1024@0.27.1366.741" timestamp="1585475378917" />
     <state x="1684" y="272" key="com.intellij.ide.util.TipDialog/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1585381299220" />
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1585660808289" />
+    <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.2646.997@0.27.2646.997" timestamp="1586008952022" />
   </component>
 </project>
