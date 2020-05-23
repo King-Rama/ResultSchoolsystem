@@ -192,9 +192,9 @@
 
             </div>
             <div class="col-lg-6 col-sm-10">
-                <canvas id="result_chart" width="500" height="600"></canvas>
+                <canvas id="result_chart" width="500" height="700"></canvas>
 
-                <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+                <script type="text/javascript" src="{% static 'js/jqer.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
         <script type="text/javascript">
             $.get('{% url "student:line_chart_json" %}', function(data) {
