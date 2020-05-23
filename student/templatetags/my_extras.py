@@ -88,3 +88,15 @@ def setting_repeat(value):
     """
     return set(value)
 
+
+@register.filter(name='exams_name')
+@stringfilter
+def setting_repeat(value):
+    """
+    this grade student subjects
+    :param value:
+    :param arg:
+    :return:
+    """
+    return set(value)
+

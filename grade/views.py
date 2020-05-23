@@ -39,7 +39,7 @@ def upload_result_master(request):
                 first_name, middle_name, last_name = header[0].split(' ')[0], header[0].split(' ')[-2], \
                                                      header[0].split(' ')[-1]
                 username = str('{}_{}'.format(first_name, last_name)).lower()
-                password = str(last_name.upper())
+                password = str(last_name.lower())
                 level, stream, of, year = header[1].split(' ')
                 room = '{}{}{}{}'.format(level, stream, of, year).lower()
                 # register classroom user
@@ -192,7 +192,9 @@ def upload_result(request):
             book = pd.read_excel(request.FILES['file']).fillna(value='-')
             header = list(book.iloc[0])
             # checking if the test result name is not repeated and that the results are uploaded to the same class
-            if ResultCase.objects.filter(exam_name_cl=header[2]).exists() :
+            level, stream, of, year = header[1].split(' ')
+            room1 = '{}{}{}{}'.format(level, stream, of, year).lower()
+            if ResultCase.objects.filter(exam_name_cl=f'{room1} - {header[2]}').exists() :
                 raise ImportError
             # starting the imports
             for student in range(len(book)):
@@ -206,7 +208,7 @@ def upload_result(request):
                 # register classroom user
                 if count < 1:
 
-                    grade_room = User.objects.get(username=request.user.username)
+                    grade_room = User.objects.get(username=room1)
 
                     # then add classroom FK
                     roomy = Grade.objects.get(room=grade_room, year=year, level=level, stream=stream)
@@ -217,7 +219,6 @@ def upload_result(request):
                 st = User.objects.get(username=username)
                 # creating new students
                 stu = Student.objects.get(user=st, class_room=roomy)
-
 
                 # creating new results
                 new_results = Results(user=stu, exam_name=exam_name_ob, maths=header[3],
@@ -248,7 +249,7 @@ def upload_result(request):
                                  'This document is for: "{}" and this is : "{}"'.format(header[1], request.user.username))
             redirect('grade:normal-result')
 
-    return render(request, 'grade/result-upload/master_doc.html', {'form': form})
+    return render(request, 'grade/result-upload/master_doc1.html', {'form': form})
 
 
 # @method_decorator([login_required, teacher_required], name='dispatch')

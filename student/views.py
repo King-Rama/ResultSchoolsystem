@@ -1,9 +1,14 @@
+
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import request
 from django.shortcuts import render, redirect
+from django.views import generic
+
+from chartjs.views.lines import BaseLineChartView
 
 # Create your views here.
 from django.utils.decorators import method_decorator
@@ -81,3 +86,125 @@ def change_password(request):
     return render(request, 'accounts/change_password.html', {
         'form': form
     })
+
+
+class LineChartJSONView(BaseLineChartView):
+    model = Results
+
+    def get_labels(self):
+        """labesls"""
+        subjects = []
+        qs = Results.objects.filter(user__user=self.request.user)[0]
+        if qs.maths != str('-'):
+            subjects.append('Mathemaics')
+
+        if qs.english != str('-'):
+            subjects.append('English')
+
+        if qs.health != str('-'):
+            subjects.append('Health')
+
+        if qs.kusoma != str('-'):
+            subjects.append('Kusoma')
+
+        if qs.arts_sports != str('-'):
+            subjects.append('Arts and Sports')
+
+        if qs.kiswahili != str('-'):
+            subjects.append('Kiswahili')
+
+        if qs.science_tech != str('-'):
+            subjects.append('Science Tech')
+
+        if qs.civics_moral != str('-'):
+            subjects.append('Civics Moral')
+
+        if qs.social_studies != str('-'):
+            subjects.append('Social Studies')
+
+        if qs.geography != str('-'):
+            subjects.append('Geography')
+
+        if qs.history != str('-'):
+            subjects.append('History')
+
+        if qs.ict != str('-'):
+            subjects.append('ICT')
+
+        if qs.v_skills != str('-'):
+            subjects.append('Vocational Skills')
+
+        if qs.pds != str('-'):
+            subjects.append('PDS')
+
+        if qs.science != str('-'):
+            subjects.append('Science')
+        return subjects
+
+    def get_providers(self):
+        """names of data-sets"""
+        exams = []
+        res = Results.objects.filter(user__user=self.request.user)
+        for qs in res:
+            exams.append(qs.exam_name.exam_name_cl)
+        exam_recorded = []
+        for exam in exams:
+            take = str(exam.split('-')[1]+'-'+exam.split('-')[-1])
+            exam_recorded.append(take)
+        return exam_recorded
+
+    def get_data(self):
+        """datasets to be plotted"""
+        subjects = []
+        res = Results.objects.filter(user__user=self.request.user)
+        for qs in res:
+
+            if qs.maths != str('-'):
+                subjects.append(int(qs.maths))
+
+            if qs.english != str('-'):
+                subjects.append(int(qs.english))
+
+            if qs.health != str('-'):
+                subjects.append(int(qs.health))
+
+            if qs.kusoma != str('-'):
+                subjects.append(int(qs.kusoma))
+
+            if qs.arts_sports != str('-'):
+                subjects.append(int(qs.arts_sports))
+
+            if qs.kiswahili != str('-'):
+                subjects.append(int(qs.kiswahili))
+
+            if qs.science_tech != str('-'):
+                subjects.append(int(qs.science_tech))
+
+            if qs.civics_moral != str('-'):
+                subjects.append(int(qs.civics_moral))
+
+            if qs.social_studies != str('-'):
+                subjects.append(int(qs.social_studies))
+
+            if qs.geography != str('-'):
+                subjects.append(int(qs.geography))
+
+            if qs.history != str('-'):
+                subjects.append(int(qs.history))
+
+            if qs.ict != str('-'):
+                subjects.append(int(qs.ict))
+
+            if qs.v_skills != str('-'):
+                subjects.append(int(qs.v_skills))
+
+            if qs.pds != str('-'):
+                subjects.append(int(qs.pds))
+
+            if qs.science != str('-'):
+                subjects.append(int(qs.science))
+        return [subjects]
+
+
+line_chart = TemplateView.as_view(template_name='student/result/detail.html')
+line_chart_json = LineChartJSONView.as_view()

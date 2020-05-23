@@ -1,0 +1,39 @@
+{% extends 'grade/base_grade.html' %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+    <nav aria-label="breadcrumb">
+
+</nav>
+    </div>
+    <hr class="mt-0 mb-4">
+    <div class="container">
+
+        {% if messages %}
+        <div class="alert alert-info">
+        {% for message in messages %}
+
+            {{ message|safe }}
+            <a class="btn btn-danger" href="{% url 'grade:master-doc' %}">Try again</a>
+        {% endfor %}
+        </div>
+
+        {% else %}
+            <h4 class='text-center'>Upload existing class results</h4>
+            <form method="post" enctype="multipart/form-data" class="container">
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <input type="submit" class="btn btn-success btn-block" value="Submit">
+    <input type="hidden" name="next" value="{% url 'grade:index' %}">
+    </form>
+        {% endif %}
+
+
+    <hr class="mt-0 mb-4">
+
+
+    </div>
+
+{% endblock content %}
+

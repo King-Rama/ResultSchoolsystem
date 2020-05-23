@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'grade',
     'student',
+    'chartjs',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

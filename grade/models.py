@@ -94,7 +94,8 @@ class Results(models.Model):
         f_name = self.user.user.first_name
         m_name = self.user.user.middle_name
         l_name = self.user.user.last_name
-        return f_name+' '+m_name+' '+l_name
+        #return f_name+' '+m_name+' '+l_name
+        return self.exam_name.exam_name_cl
 
     def __str__(self):
         return self.fullname

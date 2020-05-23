@@ -3,7 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="4c76cfe4-a7dd-4a00-9612-1a9f748b79a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/master.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/templates/grade/result-upload/master_doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/result-upload/master_doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/templates/student/result/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/result/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/templatetags/my_extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/templatetags/my_extras.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/info.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +42,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -37,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../learn/Reactify-Django-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
@@ -48,10 +60,11 @@
       <recent name="$PROJECT_DIR$/student/templates/student" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/static/fonts" />
       <recent name="$PROJECT_DIR$/grade/templates/grade/room" />
       <recent name="$PROJECT_DIR$/student/templates" />
       <recent name="$PROJECT_DIR$/grade/templates/grade" />
-      <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,11 +132,31 @@
       <workItem from="1585999933378" duration="398000" />
       <workItem from="1586000824220" duration="2910000" />
       <workItem from="1586007693174" duration="1231000" />
+      <workItem from="1586587765527" duration="6286000" />
+      <workItem from="1586682443028" duration="235000" />
+      <workItem from="1586986653802" duration="5680000" />
+      <workItem from="1587202652722" duration="582000" />
+      <workItem from="1587265931968" duration="599000" />
+      <workItem from="1587289374295" duration="1727000" />
+      <workItem from="1587378014672" duration="5953000" />
+      <workItem from="1587417056181" duration="2072000" />
+      <workItem from="1587470519517" duration="1117000" />
+      <workItem from="1587487807573" duration="597000" />
+      <workItem from="1587495574337" duration="896000" />
+      <workItem from="1587738585288" duration="278000" />
+      <workItem from="1588521649945" duration="19432000" />
+      <workItem from="1588787153943" duration="1854000" />
+      <workItem from="1588852457598" duration="606000" />
+      <workItem from="1589806545758" duration="553000" />
+      <workItem from="1589809218694" duration="980000" />
+      <workItem from="1590084941781" duration="364000" />
+      <workItem from="1590215723601" duration="4078000" />
+      <workItem from="1590220049015" duration="6279000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="393" y="201" width="569" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584229548466">
@@ -143,6 +176,10 @@
       <screen x="1366" y="0" width="1280" height="1024" />
     </state>
     <state x="1789" y="269" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1585480749950" />
+    <state x="1867" y="411" key="Github.ShareDialog" timestamp="1586682588546">
+      <screen x="1366" y="0" width="1280" height="1024" />
+    </state>
+    <state x="1867" y="411" key="Github.ShareDialog/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1586682588546" />
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1586008952022">
       <screen x="0" y="27" width="2646" height="997" />
     </state>

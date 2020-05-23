@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import path
 from student.views import ResultDetailView, ResultListView, AssignmentDetailView, AssignmentListView, StudentHomePage, \
-    USerUpdateView, change_password
+    USerUpdateView, change_password, line_chart, line_chart_json
 
 app_name = 'student'
 
@@ -13,4 +13,7 @@ urlpatterns = [
     path('assign/<int:pk>/', AssignmentDetailView.as_view(), name='assign-detail'),
     path('student/update/info/<int:pk>/', USerUpdateView.as_view(), name='student-user-update'),
     path('password/', change_password, name='change_password'),
+    path('chart/', line_chart, name='line_chart'),
+    path('chartJSON/', line_chart_json, name='line_chart_json'),
+
 ]
