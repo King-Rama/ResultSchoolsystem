@@ -191,11 +191,12 @@
 
             </div>
             <div class="col-lg-6 col-sm-10">
+                <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
                 <canvas id="result_chart" width="600" height="800"></canvas>
 
 
-                    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
         <script type="text/javascript">
             $.get('{% url "student:line_chart_json" %}', function(data) {
                 var ctx = $("#result_chart").get(0).getContext("2d");

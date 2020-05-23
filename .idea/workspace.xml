@@ -3,20 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4c76cfe4-a7dd-4a00-9612-1a9f748b79a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/nav_grade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/templates/grade/result-upload/master_doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/grade/templates/grade/result-upload/master_doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templates/student/result/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/student/templates/student/result/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/templatetags/my_extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/templatetags/my_extras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/info.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +139,7 @@
       <workItem from="1589809218694" duration="980000" />
       <workItem from="1590084941781" duration="364000" />
       <workItem from="1590215723601" duration="4078000" />
-      <workItem from="1590220049015" duration="6626000" />
+      <workItem from="1590220049015" duration="8011000" />
     </task>
     <servers />
   </component>
@@ -180,6 +168,10 @@
       <screen x="1366" y="0" width="1280" height="1024" />
     </state>
     <state x="1867" y="411" key="Github.ShareDialog/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1586682588546" />
+    <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1590227808585">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="263" height="500" key="HiddenNamespacesPopup/0.27.1366.741/1366.0.1280.1024@0.27.1366.741" timestamp="1590227808585" />
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1586008952022">
       <screen x="0" y="27" width="2646" height="997" />
     </state>
@@ -187,5 +179,16 @@
     <state x="1684" y="272" key="com.intellij.ide.util.TipDialog/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1585381299220" />
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1585660808289" />
     <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.2646.997@0.27.2646.997" timestamp="1586008952022" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/student/views.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
