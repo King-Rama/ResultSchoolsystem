@@ -353,7 +353,7 @@ def reset_password(request):
                     l_name = data.split(' ')[-1]
                     user_name = '{}_{}'.format(f_name, l_name).lower()
                     usr = User.objects.get(username=user_name)
-                    new_pass = l_name.upper()
+                    new_pass = l_name.lower()
                     usr.set_password(new_pass)
                     # update_session_auth_hash(usr)
                     usr.save()
