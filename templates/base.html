@@ -6,6 +6,7 @@
 
 <html lang="en">
 <head>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
     <link rel="stylesheet" href="{% static 'master.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +19,7 @@
 
 <body>
 
-<div class="container">
+<div class="container" role="main">
 <hr class="mt-0 mb-4">
     <div class="row justify-content-md-center">
 
@@ -50,7 +51,11 @@
         </div>
     </div>
 </div>
-
+<footer class="footer navbar-fixed-bottom" style="position: inherit; height: 100px; bottom: 0; width: 100%; background-color: darkgrey">
+      <div class="container">
+        <span class="text-white">For any inquiry or suggestions please visit <a href="https://burhanischools.sc.tz/contacts.html#footer"> Burhani Schools</a></span>
+      </div>
+    </footer>
 </body>
 
 
@@ -62,23 +67,3 @@
 {% block graph %}
 {% endblock %}
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
