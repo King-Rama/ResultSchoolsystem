@@ -1,6 +1,9 @@
 {% extends 'student/base.html' %}
 {% load my_extras %}
 {% load static %}
+
+{% block title %}{{ result_detail.exam_name }} Results{% endblock %}
+
 {% block content %}
 
     <nav aria-label="breadcrumb">
