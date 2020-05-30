@@ -244,9 +244,9 @@ def upload_result(request):
             messages.add_message(request, messages.ERROR, '{} is already added, please add a new result document'.format(header[2]))
             redirect('grade:normal-result')
 
-        except Grade.DoesNotExist as error:
+        except User.DoesNotExist as error:
             messages.add_message(request, messages.ERROR,
-                                 'This document is for: "{}" and this is : "{}"'.format(header[1], request.user.username))
+                                 'This class has not been created.')
             redirect('grade:normal-result')
 
     return render(request, 'grade/result-upload/master_doc1.html', {'form': form})

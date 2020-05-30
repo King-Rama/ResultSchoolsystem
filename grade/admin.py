@@ -7,3 +7,4 @@ from .models import ResultFileUpload, Results, User, Student, Assignment, Grade,
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Grade)
+admin.site.register(Results)

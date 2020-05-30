@@ -1,4 +1,3 @@
-
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
@@ -154,58 +153,70 @@ class LineChartJSONView(BaseLineChartView):
             exam_recorded.append(take)
         return exam_recorded
 
+
+
     def get_data(self):
         """datasets to be plotted"""
-        subjects = []
-        res = Results.objects.filter(user__user=self.request.user)
-        for qs in res:
 
+        res = Results.objects.filter(user__user=self.request.user)
+        subjects = [[] for x in range(len(res))]
+        num = 0
+        for qs in res:
+            subjects[num] = []
             if qs.maths != str('-'):
-                subjects.append(int(qs.maths))
+                subjects[num].append(int(qs.maths))
 
             if qs.english != str('-'):
-                subjects.append(int(qs.english))
+                subjects[num].append(int(qs.english))
 
             if qs.health != str('-'):
-                subjects.append(int(qs.health))
+                subjects[num].append(int(qs.health))
 
             if qs.kusoma != str('-'):
-                subjects.append(int(qs.kusoma))
+                subjects[num].append(int(qs.kusoma))
 
             if qs.arts_sports != str('-'):
-                subjects.append(int(qs.arts_sports))
+                subjects[num].append(int(qs.arts_sports))
 
             if qs.kiswahili != str('-'):
-                subjects.append(int(qs.kiswahili))
+                subjects[num].append(int(qs.kiswahili))
 
             if qs.science_tech != str('-'):
-                subjects.append(int(qs.science_tech))
+                subjects[num].append(int(qs.science_tech))
 
             if qs.civics_moral != str('-'):
-                subjects.append(int(qs.civics_moral))
+                subjects[num].append(int(qs.civics_moral))
 
             if qs.social_studies != str('-'):
-                subjects.append(int(qs.social_studies))
+                subjects[num].append(int(qs.social_studies))
 
             if qs.geography != str('-'):
-                subjects.append(int(qs.geography))
+                subjects[num].append(int(qs.geography))
 
             if qs.history != str('-'):
-                subjects.append(int(qs.history))
+                subjects[num].append(int(qs.history))
 
             if qs.ict != str('-'):
-                subjects.append(int(qs.ict))
+                subjects[num].append(int(qs.ict))
 
             if qs.v_skills != str('-'):
-                subjects.append(int(qs.v_skills))
+                subjects[num].append(int(qs.v_skills))
 
             if qs.pds != str('-'):
-                subjects.append(int(qs.pds))
+                subjects[num].append(int(qs.pds))
 
             if qs.science != str('-'):
-                subjects.append(int(qs.science))
-        return [subjects]
+                subjects[num].append(int(qs.science))
+            num = num + 1
+        return subjects
 
 
 line_chart = TemplateView.as_view(template_name='student/result/detail.html')
 line_chart_json = LineChartJSONView.as_view()
+
+
+def result_chart(request):
+    labels = []
+    data = []
+
+    queryset = Results.objects.values('')

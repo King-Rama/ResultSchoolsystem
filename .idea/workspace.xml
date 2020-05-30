@@ -4,7 +4,11 @@
     <list default="true" id="4c76cfe4-a7dd-4a00-9612-1a9f748b79a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/master.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +60,29 @@
       <recent name="$PROJECT_DIR$/grade/templates/grade" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.views">
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rsm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/student" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/student/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="rsm" type="Python.DjangoServer" factoryName="Django server">
       <module name="rsm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,6 +106,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -143,7 +174,10 @@
       <workItem from="1590220049015" duration="9519000" />
       <workItem from="1590245834378" duration="656000" />
       <workItem from="1590396575419" duration="1304000" />
-      <workItem from="1590398606379" duration="1441000" />
+      <workItem from="1590398606379" duration="1945000" />
+      <workItem from="1590680914779" duration="5502000" />
+      <workItem from="1590720497812" duration="2087000" />
+      <workItem from="1590818928930" duration="10895000" />
     </task>
     <servers />
   </component>
@@ -172,6 +206,22 @@
       <screen x="1366" y="0" width="1280" height="1024" />
     </state>
     <state x="1867" y="411" key="Github.ShareDialog/0.27.1366.741/1366.0.1280.1024@1366.0.1280.1024" timestamp="1586682588546" />
+    <state width="1320" height="175" key="GridCell.Tab.0.bottom" timestamp="1590844714590">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="175" key="GridCell.Tab.0.bottom/0.27.1366.741/1366.0.1280.1024@0.27.1366.741" timestamp="1590844714590" />
+    <state width="1320" height="175" key="GridCell.Tab.0.center" timestamp="1590844714589">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="175" key="GridCell.Tab.0.center/0.27.1366.741/1366.0.1280.1024@0.27.1366.741" timestamp="1590844714589" />
+    <state width="1320" height="175" key="GridCell.Tab.0.left" timestamp="1590844714589">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="175" key="GridCell.Tab.0.left/0.27.1366.741/1366.0.1280.1024@0.27.1366.741" timestamp="1590844714589" />
+    <state width="1320" height="175" key="GridCell.Tab.0.right" timestamp="1590844714589">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="175" key="GridCell.Tab.0.right/0.27.1366.741/1366.0.1280.1024@0.27.1366.741" timestamp="1590844714589" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1590227808585">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -189,10 +239,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/student/views.py</url>
-          <line>1</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/rsm$views.coverage" NAME="views Coverage Results" MODIFIED="1590844669706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/student" />
   </component>
 </project>

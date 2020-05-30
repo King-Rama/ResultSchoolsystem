@@ -58,6 +58,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+    height: 100%;
 }
 .footer {
   position: absolute;
@@ -78,11 +79,10 @@ body > .container {
   padding: 60px 15px 0;
 }
 
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 code {
   font-size: 80%;
+}
+
+#sticky-footer {
+  flex-shrink: 0;
 }
