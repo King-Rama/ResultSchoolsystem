@@ -29,6 +29,7 @@ class BaseLineChartView(JSONView):
                 "pointBackgroundColor": "rgba(%d, %d, %d, 1)" % color,
                 "pointBorderColor": "#fff",
                 "data": entry,
+                "fill": False,
             }
             if i < num:
                 dataset["label"] = providers[i]  # series labels for Chart.js
