@@ -12,6 +12,8 @@ class AssignmentCreateForm(ModelForm):
 
 
 class DocUploadForm(ModelForm):
+    exam_name = forms.CharField(required=False)
+
     class Meta:
         model = ResultFileUpload
         fields = ['exam_name', 'file']
