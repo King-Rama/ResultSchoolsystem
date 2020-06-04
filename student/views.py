@@ -149,10 +149,9 @@ class LineChartJSONView(BaseLineChartView):
             exams.append(qs.exam_name.exam_name_cl)
         exam_recorded = []
         for exam in exams:
-            take = str(exam.split('-')[1]+'-'+exam.split('-')[-1])
+            take = str(exam.split(' ')[-1])
             exam_recorded.append(take)
         return exam_recorded
-
 
 
     def get_data(self):
