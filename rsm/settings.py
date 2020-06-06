@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'yc!uqp^-#j+a#%(mjv5%ne5$opuzos(+wo@d3*4)9*qm#vwg^4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 
@@ -149,7 +149,6 @@ MEDIA_URL = '/media/'
 TEMPLATE_CONTEXT_PROCESSORS = (
     '-----------------------'
     'django.core.context_processors.media',
-
 )
 
 LOGIN_REDIRECT_URL = '/'

@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c76cfe4-a7dd-4a00-9612-1a9f748b79a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chartjs/views/lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/chartjs/views/lines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grade/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/grade/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="4c76cfe4-a7dd-4a00-9612-1a9f748b79a0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,6 +179,7 @@
       <workItem from="1591187289609" duration="1773000" />
       <workItem from="1591191642145" duration="342000" />
       <workItem from="1591192745655" duration="1299000" />
+      <workItem from="1591247368802" duration="1213000" />
     </task>
     <servers />
   </component>
