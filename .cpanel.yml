@@ -1,0 +1,5 @@
+---
+deployment:
+      tasks:
+        - export DEPLOYPATH=/home/burhani/ResultSchoolsystem
+        - /bin/cp -r * $DEPLOYPATH
